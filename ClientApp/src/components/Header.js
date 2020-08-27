@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import NewArrivals from "./NewArrivals";
 import SinglePage from "./SinglePage";
 
-class Header extends Component {
-  render() {
-    return (
+const Header = (props) => {
+  return (
+    <div>
       <div className="Header">
         <header className="header">
           <div className="container-fluid px-lg-5">
@@ -28,7 +28,9 @@ class Header extends Component {
               <Router>
                 <ul className="menu mt-2">
                   <li className="active">
-                    <Link to="/home">Home</Link>
+                    <a href="/#" onClick={props.changePage("Home")}>
+                      Single Page
+                    </a>{" "}
                   </li>
                   <li>
                     <Link to="/about">About</Link>
@@ -52,7 +54,10 @@ class Header extends Component {
                         <Link to="/shop">Shop</Link>
                       </li>
                       <li>
-                        <Link to="/single-page">Single Page</Link>
+                        {/* <Link to="/single-page">Single Page</Link> */}
+                        <a href="/#" onClick={props.changePage("Single")}>
+                          Single Page
+                        </a>
                       </li>
                     </ul>
                   </li>
@@ -72,8 +77,8 @@ class Header extends Component {
           </div>
         </header>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Header;

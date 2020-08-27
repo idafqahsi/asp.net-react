@@ -2,39 +2,42 @@ import React, { Component } from "react";
 
 import "./App.css";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Features from "./components/Features";
-import NewArrivals from "./components/NewArrivals";
-import PopularProducts from "./components/PopularProducts";
-import UserReview from "./components/UserReview";
-import Brands from "./components/Brands";
+import Index from "./components/Index";
+import SinglePage from "./components/SinglePage";
 
 class App extends Component {
+  state = {
+    page: "Home",
+  };
 
-    render() {
+  changePage = (newPage) => {
+    this.setState({ page: newPage });
+    console.log(this.state.page);
+  };
+
+  render() {
+    switch (this.state.page) {
+      case "Home":
         return (
-            <div className="App">
-                <div className="main-banner" id="home">
-                    <Header />
-                    <div className="banner-info">
-                        <p>Trending of the week</p>
-                        <h3 className="mb-4">Casual Shoes for Men</h3>
-                        <div className="ban-buttons">
-                            <a href="shop-single.html" className="btn">Shop Now</a>
-                            <a href="single.html" className="btn active">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <Features />
-                <NewArrivals />
-                <UserReview />
-                <PopularProducts />
-                <Brands />
-                <Footer />
-            </div>
+          <div className="App">
+            <Index changePage={this.changePage} />
+          </div>
+        );
+      case "Single":
+        return (
+          <div className="App">
+            <SinglePage changePage={this.changePage} />
+          </div>
+        );
+
+      default:
+        return (
+          <div className="App">
+            <h1>default</h1>
+          </div>
         );
     }
+  }
 }
 
 export default App;
