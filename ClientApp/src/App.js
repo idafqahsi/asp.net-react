@@ -4,6 +4,7 @@ import "./App.css";
 
 import Index from "./components/Index";
 import SinglePage from "./components/SinglePage";
+import Contact from "./components/Contact";
 
 class App extends Component {
   state = {
@@ -16,27 +17,26 @@ class App extends Component {
   };
 
   render() {
+    var page;
+
     switch (this.state.page) {
       case "Home":
-        return (
-          <div className="App">
-            <Index changePage={this.changePage} />
-          </div>
-        );
+        page = <Index changePage={this.changePage} />;
+        break;
+
       case "Single":
-        return (
-          <div className="App">
-            <SinglePage changePage={this.changePage} />
-          </div>
-        );
+        page = <SinglePage changePage={this.changePage} />;
+        break;
+
+      case "Contact":
+        page = <Contact changePage={this.changePage} />;
+        break;
 
       default:
-        return (
-          <div className="App">
-            <h1>default</h1>
-          </div>
-        );
+           page = <Index changePage={this.changePage} />
     }
+
+    return <div className="App">{page}</div>;
   }
 }
 

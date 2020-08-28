@@ -1,73 +1,12 @@
 import React, { Component } from "react";
 
-class SinglePage extends Component {
-  render() {
-    return (
-      <div className="SinglePage">
-        <div className="main-banner inner" id="home">
-          <header className="header">
-            <div className="container-fluid px-lg-5">
-              <nav className="py-4">
-                <div id="logo">
-                  <h1>
-                    {" "}
-                    <a href="index.html">
-                      <span className="fa fa-bold" aria-hidden="true"></span>
-                      ootie
-                    </a>
-                  </h1>
-                </div>
+import Header from "./Header";
 
-                <label htmlFor="drop" className="toggle">
-                  Menu
-                </label>
-                <input type="checkbox" id="drop" />
-                <ul className="menu mt-2">
-                  <li>
-                    <a href="index.html">Home</a>
-                  </li>
-                  <li>
-                    <a href="about.html">About</a>
-                  </li>
-                  <li>
-                    <a href="blog.html">Blog</a>
-                  </li>
-                  <li>
-                    <label htmlFor="drop-2" className="toggle">
-                      Drop Down{" "}
-                      <span
-                        className="fa fa-angle-down"
-                        aria-hidden="true"
-                      ></span>{" "}
-                    </label>
-                    <a href="/#">
-                      Drop Down{" "}
-                      <span
-                        className="fa fa-angle-down"
-                        aria-hidden="true"
-                      ></span>
-                    </a>
-                    <input type="checkbox" id="drop-2" />
-                    <ul>
-                      <li>
-                        <a href="blog.html">Blog</a>
-                      </li>
-                      <li>
-                        <a href="shop.html">Shop Now</a>
-                      </li>
-                      <li>
-                        <a href="shop-single.html">Single Page</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="contact.html">Contact</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </header>
-        </div>
+
+function SinglePage (props) {
+    return (
+      <div className="SinglePage"> 
+        <Header type = "small" changePage={props.changePage} />
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
             <a href="index.html">Home</a>
@@ -226,7 +165,7 @@ class SinglePage extends Component {
                   <h3 className="sear-head">Special Deals</h3>
                   <div className="special-sec1 row mb-3">
                     <div className="img-deals col-md-4">
-                      <img src="images/s4.jpg" className="img-fluid" alt="" />
+                      <img src={require("./images/s4.jpg")} className="img-fluid" alt="" />
                     </div>
                     <div className="img-deal1 col-md-4">
                       <h3>Shuberry Heels</h3>
@@ -235,7 +174,7 @@ class SinglePage extends Component {
                   </div>
                   <div className="special-sec1 row">
                     <div className="img-deals col-md-4">
-                      <img src="images/s2.jpg" className="img-fluid" alt="" />
+                      <img src={require("./images/s2.jpg")} className="img-fluid" alt="" />
                     </div>
                     <div className="img-deal1 col-md-8">
                       <h3>Chikku Loafers</h3>
@@ -244,7 +183,7 @@ class SinglePage extends Component {
                   </div>
                   <div className="special-sec1 row my-3">
                     <div className="img-deals col-md-4">
-                      <img src="images/s1.jpg" className="img-fluid" alt="" />
+                      <img src={require("./images/s1.jpg")} className="img-fluid" alt="" />
                     </div>
                     <div className="img-deal1 col-md-8">
                       <h3>Bella Toes</h3>
@@ -253,7 +192,7 @@ class SinglePage extends Component {
                   </div>
                   <div className="special-sec1 row">
                     <div className="img-deals col-md-4">
-                      <img src="images/s5.jpg" className="img-fluid" alt="" />
+                      <img src={require("./images/s5.jpg")} className="img-fluid" alt="" />
                     </div>
                     <div className="img-deal1 col-md-8">
                       <h3>Red Bellies</h3>
@@ -262,7 +201,7 @@ class SinglePage extends Component {
                   </div>
                   <div className="special-sec1 row mt-3">
                     <div className="img-deals col-md-4">
-                      <img src="images/s3.jpg" className="img-fluid" alt="" />
+                      <img src={require("./images/s3.jpg")} className="img-fluid" alt="" />
                     </div>
                     <div className="img-deal1 col-md-8">
                       <h3>(SRV) Sneakers</h3>
@@ -274,7 +213,7 @@ class SinglePage extends Component {
               <div className="left-ads-display col-lg-8">
                 <div className="row">
                   <div className="desc1-left col-md-6">
-                    <img src="images/d1.jpg" className="img-fluid" alt="" />
+                    <img src={require("./images/d1.jpg")} className="img-fluid" alt="" />
                   </div>
                   <div className="desc1-right col-md-6 pl-lg-4">
                     <h3>Lorem ipsum dolor sit amet laoret.</h3>
@@ -369,7 +308,7 @@ class SinglePage extends Component {
                     <div className="product-shoe-info shoe text-center">
                       <div className="men-thumb-item">
                         <img
-                          src="images/s10.jpg"
+                          src={require("./images/s10.jpg")}
                           className="img-fluid"
                           alt=""
                         />
@@ -434,7 +373,7 @@ class SinglePage extends Component {
                     <div className="product-shoe-info shoe text-center">
                       <div className="men-thumb-item">
                         <img
-                          src="images/s11.jpg"
+                          src={require("./images/s11.jpg")}
                           className="img-fluid"
                           alt=""
                         />
@@ -499,7 +438,7 @@ class SinglePage extends Component {
                     <div className="product-shoe-info shoe text-center">
                       <div className="men-thumb-item">
                         <img
-                          src="images/s12.jpg"
+                          src={require("./images/s12.jpg")}
                           className="img-fluid"
                           alt=""
                         />
@@ -718,6 +657,6 @@ class SinglePage extends Component {
       </div>
     );
   }
-}
+
 
 export default SinglePage;

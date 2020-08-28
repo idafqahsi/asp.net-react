@@ -7,11 +7,11 @@ import PopularProducts from "./PopularProducts";
 import UserReview from "./UserReview";
 import Brands from "./Brands";
 
-const Index = (props) => {
+function Index(props) {
   return (
     <div className="Index">
       <div className="main-banner" id="home">
-        <Header changePage={props.changePage} />
+        <Header type = "large" changePage={props.changePage} />
         <div className="banner-info">
           <p>Trending of the week</p>
           <h3 className="mb-4">Casual Shoes for Men</h3>
